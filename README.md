@@ -1,8 +1,12 @@
 # Simple-Tools
-Simple Tools for dev
+Simple Tools for developing
 ---
 
- - data_collector  
- - install_docker  
- - install_venv
- - change_swap
+ - data collector
+
+ - change swap
+
+ - install Docker  
+ - install Virtual Environment
+ - install FileZilla
+
