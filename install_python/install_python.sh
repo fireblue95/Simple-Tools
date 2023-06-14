@@ -68,5 +68,5 @@ add_path ${PIPx_NAME} /usr/bin/${PIP3x_NAME}
 
 cd ${MAIN_DIR}
 
-rm -rf ${PYTHON_DIR}.tgz
-rm -rf ${PYTHON_DIR}
+sudo rm -rf ${PYTHON_DIR}.tgz
+sudo rm -rf ${PYTHON_DIR}
