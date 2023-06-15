@@ -1,10 +1,9 @@
 MAIN_DIR=$(pwd)
 
-USE_SUDO=true
+USE_SUDO=1
 
 if [ $(dpkg -l | grep sudo | wc -l) -eq 0 ]; then
-    USE_SUDO=false
-    echo "False set."
+    USE_SUDO=0
 fi
 
 PYTHON_VERSION="3.9.10"
@@ -16,14 +15,10 @@ fi
 V_JUNIOR=$(echo "${PYTHON_VERSION}" | cut -d . -f 1)
 V_SENIOR=$(echo "${PYTHON_VERSION}" | cut -d . -f 1,2)
 
-if [ ${USE_SUDO} ]; then
-    echo "FFFFF"
-
+if [ ${USE_SUDO} -eq 1 ]; then
     sudo apt update
     sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev
 else
-    echo "OOOOO"
-
     apt-get update
     apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev
 fi
@@ -39,7 +34,7 @@ cd ${PYTHON_DIR}
 
 make -j$(($(nproc) - 1))
 
-if [ ${USE_SUDO} ]; then
+if [ ${USE_SUDO} -eq 1 ]; then
     sudo make altinstall
 else
     make altinstall
@@ -55,7 +50,7 @@ add_path () {
         echo "Add ${1} to /usr/bin"
 
         # Add pythonx.x to /usr/bin
-        if [ ${USE_SUDO} ]; then
+        if [ ${USE_SUDO} -eq 1 ]; then
             sudo update-alternatives --install /usr/bin/${1} ${1} ${2} 5
         else
             update-alternatives --install /usr/bin/${1} ${1} ${2} 5
@@ -92,7 +87,7 @@ add_path ${PIPx_NAME} /usr/bin/${PIP3x_NAME}
 
 cd ${MAIN_DIR}
 
-if [ ${USE_SUDO} ]; then
+if [ ${USE_SUDO} -eq 1 ]; then
     sudo rm -rf ${PYTHON_DIR}.tgz
     sudo rm -rf ${PYTHON_DIR}
 else
