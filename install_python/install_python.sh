@@ -17,10 +17,10 @@ V_SENIOR=$(echo "${PYTHON_VERSION}" | cut -d . -f 1,2)
 
 if [ ${USE_SUDO} -eq 1 ]; then
     sudo apt update
-    sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev liblzma-dev tk8.5-dev lzma lzma-dev libreadline6-dev
+    sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev liblzma-dev tk-dev lzma lzma-dev libreadline6-dev
 else
     apt-get update
-    apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev liblzma-dev tk8.5-dev lzma lzma-dev libreadline6-dev
+    apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev liblzma-dev tk-dev lzma lzma-dev libreadline6-dev
 fi
 
 wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz
