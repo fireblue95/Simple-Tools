@@ -4,7 +4,7 @@ Simple Tools for developing
 
  - data collector
 
- - change swap
+ - change swap sizes
 
  - install Docker  
  - install Virtual Environment
