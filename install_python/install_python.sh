@@ -4,12 +4,7 @@ USE_SUDO=true
 
 if [ $(dpkg -l | grep sudo | wc -l) -eq 0 ]; then
     USE_SUDO=false
-    echo "??"
 fi
-
-echo "USE_SUDO ${USE_SUDO}"
-
-exit 1
 
 PYTHON_VERSION="3.9.10"
 
