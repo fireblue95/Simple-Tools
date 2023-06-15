@@ -9,4 +9,4 @@ Simple Tools for developing
  - install Docker  
  - install Virtual Environment
  - install FileZilla
-
+ - install Python from source
