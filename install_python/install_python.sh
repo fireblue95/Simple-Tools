@@ -4,6 +4,7 @@ USE_SUDO=true
 
 if [ $(dpkg -l | grep sudo | wc -l) -eq 0 ]; then
     USE_SUDO=false
+    echo "False set."
 fi
 
 PYTHON_VERSION="3.9.10"
@@ -16,9 +17,13 @@ V_JUNIOR=$(echo "${PYTHON_VERSION}" | cut -d . -f 1)
 V_SENIOR=$(echo "${PYTHON_VERSION}" | cut -d . -f 1,2)
 
 if [ ${USE_SUDO} ]; then
+    echo "FFFFF"
+
     sudo apt update
     sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev
 else
+    echo "OOOOO"
+
     apt-get update
     apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev
 fi
