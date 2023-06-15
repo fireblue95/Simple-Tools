@@ -1,19 +1,17 @@
 MAIN_DIR=$(pwd)
 
-sudo apt update
-sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev
-
-
 PYTHON_VERSION="3.9.10"
 
-# read -p "Select the python version: " VALUE
+if [ ${1} ]; then
+    PYTHON_VERSION=${1}
+fi
 
 V_JUNIOR=$(echo "${PYTHON_VERSION}" | cut -d . -f 1)
 V_SENIOR=$(echo "${PYTHON_VERSION}" | cut -d . -f 1,2)
 
-echo ${V_JUNIOR}
+sudo apt update
+sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev
 
-# echo https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz
 wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz
 
 PYTHON_DIR=Python-${PYTHON_VERSION}
