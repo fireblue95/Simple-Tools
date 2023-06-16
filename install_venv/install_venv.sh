@@ -17,3 +17,6 @@ source ~/.bashrc
 # pip install -U numpy
 
 echo "Installation was finished."
+
+echo "Need to use ( source install_venv.sh ) to run this file."
+echo "Also can use bash to run but the user needs to use ( source ~/.bashrc ) after installation is finished."
