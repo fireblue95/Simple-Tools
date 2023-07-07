@@ -10,6 +10,7 @@ PYTHON_VERSION="3.9.10"
 
 if [ ${1} ]; then
     PYTHON_VERSION=${1}
+    echo "Set PYTHON_VERSION: ${PYTHON_VERSION}"
 fi
 
 V_JUNIOR=$(echo "${PYTHON_VERSION}" | cut -d . -f 1)
