@@ -86,6 +86,12 @@ add_path ${PIPx_NAME} /usr/bin/${PIP3x_NAME}
 
 #----------------------------------------------------------------
 
+PIP_NAME=pip
+
+add_path ${PIP_NAME} /usr/bin/${PIP3x_NAME}
+
+#----------------------------------------------------------------
+
 cd ${MAIN_DIR}
 
 if [ ${USE_SUDO} -eq 1 ]; then
