@@ -46,7 +46,7 @@ fi
 # add_path(path1, path2)
 add_path () {
 
-    if [ ! -f "/usr/bin/${1}" ]; then
+    if [ ! -f "/usr/bin/${1}" ] || ([ -f "/usr/bin/${1}" ] && [ -h "/usr/bin/${1}" ] && [ "$(readlink "/usr/bin/${1}")" != "${2}" ]); then
 
         echo "Add ${1} to /usr/bin"
 
